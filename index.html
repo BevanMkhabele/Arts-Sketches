@@ -8,15 +8,20 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
+        .content-container {
+            display: flex; /* Create a flex container for the content sections */
+            justify-content: space-around; /* Space around the sections horizontally */
+            align-items: center; /* Center items vertically within the container */
+        }
         .content-section {
             background-color: rgba(255, 255, 255, 0.7); /* Background color with opacity for content sections */
             padding: 20px;
-            margin: 20px;
             border-radius: 10px;
             border: 5px solid #ffcc00; /* Yellowish border */
+            width: 30%; /* Adjust the width as needed */
         }
         img {
-            max-width: 75%; /* Reduce picture size by 25% */
+            max-width: 100%; /* Allow images to take the full width of their containers */
         }
     </style>
 </head>
@@ -24,22 +29,24 @@
     <h1>Arts & Sketches</h1>
     <p>Welcome to Arts & Sketches, a creative space for art and sketches.</p>
 
-    <div class="content-section">
-        <h2>Section 1</h2>
-        <p>This is the first content section with a picture:</p>
-        <img src="picture1.jpg" alt="Picture 1">
-    </div>
+    <div class="content-container">
+        <div class="content-section">
+            <h2>Section 1</h2>
+            <p>This is the first content section with a picture:</p>
+            <img src="picture1.jpg" alt="Picture 1">
+        </div>
 
-    <div class="content-section">
-        <h2>Section 2</h2>
-        <p>This is the second content section with a picture:</p>
-        <img src="picture2.jpg" alt="Picture 2">
-    </div>
+        <div class="content-section">
+            <h2>Section 2</h2>
+            <p>This is the second content section with a picture:</p>
+            <img src="picture2.jpg" alt="Picture 2">
+        </div>
 
-    <div class="content-section">
-        <h2>Section 3</h2>
-        <p>This is the third content section with a picture:</p>
-        <img src="picture3.jpg" alt="Picture 3">
+        <div class="content-section">
+            <h2>Section 3</h2>
+            <p>This is the third content section with a picture:</p>
+            <img src="picture3.jpg" alt="Picture 3">
+        </div>
     </div>
 </body>
 </html>
