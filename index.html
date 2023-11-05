@@ -23,6 +23,9 @@
         img {
             max-width: 100%; /* Allow images to take the full width of their containers */
         }
+        h1 {
+            font-size: 36px; /* Increase the heading size */
+        }
     </style>
 </head>
 <body>
@@ -33,20 +36,30 @@
         <div class="content-section">
             <h2>Section 1</h2>
             <p>This is the first content section with a picture:</p>
-            <img src="picture1.jpg" alt="Picture 1">
+            <img src="picture1.jpg" alt="Picture 1" style="max-width: 100%; height: auto;">
+            <div style="position: relative;">
+                <span style="position: absolute; top: 10px; left: 10px; font-size: 24px; color: rgba(255, 255, 255, 0.7);">A5</span>
+            </div>
         </div>
 
         <div class="content-section">
             <h2>Section 2</h2>
             <p>This is the second content section with a picture:</p>
-            <img src="picture2.jpg" alt="Picture 2">
+            <img src="picture2.jpg" alt="Picture 2" style="max-width: 100%; height: auto;">
+            <div style="position: relative;">
+                <span style="position: absolute; top: 10px; left: 10px; font-size: 24px; color: rgba(255, 255, 255, 0.7);">A4</span>
+            </div>
         </div>
 
         <div class="content-section">
             <h2>Section 3</h2>
             <p>This is the third content section with a picture:</p>
-            <img src="picture3.jpg" alt="Picture 3">
+            <img src="picture3.jpg" alt="Picture 3" style="max-width: 100%; height: auto;">
+            <div style="position: relative;">
+                <span style="position: absolute; top: 10px; left: 10px; font-size: 24px; color: rgba(255, 255, 255, 0.7);">A4</span>
+            </div>
         </div>
     </div>
 </body>
 </html>
+
