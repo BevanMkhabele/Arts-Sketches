@@ -19,12 +19,21 @@
             border-radius: 10px;
             border: 5px solid #ffcc00; /* Yellowish border */
             width: 30%; /* Adjust the width as needed */
+            position: relative;
         }
         img {
             max-width: 100%; /* Allow images to take the full width of their containers */
         }
         h1 {
-            font-size: 36px; /* Increase the heading size */
+            font-size: 72px; /* Increase the heading size by 100% */
+            text-align: center; /* Center the heading text */
+        }
+        .watermark {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: rgba(0, 128, 0, 0.7); /* Greenish color for the watermark */
         }
     </style>
 </head>
@@ -37,29 +46,22 @@
             <h2>Section 1</h2>
             <p>This is the first content section with a picture:</p>
             <img src="picture1.jpg" alt="Picture 1" style="max-width: 100%; height: auto;">
-            <div style="position: relative;">
-                <span style="position: absolute; top: 10px; left: 10px; font-size: 24px; color: rgba(255, 255, 255, 0.7);">A5</span>
-            </div>
+            <span class="watermark">A5</span>
         </div>
 
         <div class="content-section">
             <h2>Section 2</h2>
             <p>This is the second content section with a picture:</p>
             <img src="picture2.jpg" alt="Picture 2" style="max-width: 100%; height: auto;">
-            <div style="position: relative;">
-                <span style="position: absolute; top: 10px; left: 10px; font-size: 24px; color: rgba(255, 255, 255, 0.7);">A4</span>
-            </div>
+            <span class="watermark">A4</span>
         </div>
 
-        <div class="content-section">
+        <div class "content-section">
             <h2>Section 3</h2>
             <p>This is the third content section with a picture:</p>
             <img src="picture3.jpg" alt="Picture 3" style="max-width: 100%; height: auto;">
-            <div style="position: relative;">
-                <span style="position: absolute; top: 10px; left: 10px; font-size: 24px; color: rgba(255, 255, 255, 0.7);">A4</span>
-            </div>
+            <span class="watermark">A4</span>
         </div>
     </div>
 </body>
 </html>
-
