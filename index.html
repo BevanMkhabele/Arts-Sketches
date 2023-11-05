@@ -27,28 +27,8 @@
             margin: 10px;
             position: relative;
             text-align: center;
-            cursor: pointer;
-            perspective: 1000px; /* Add perspective for 3D effect */
-        }
-
-        .content-section:hover .front {
-            transform: rotateY(180deg); /* Rotate the section on hover */
-        }
-
-        .front {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            backface-visibility: hidden; /* Hide the back face of the section */
             transition: transform 0.3s; /* Transition for the image rotation */
-        }
-
-        .back {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            backface-visibility: hidden; /* Hide the back face of the section */
-            transform: rotateY(180deg); /* Initially, show the backside */
+            cursor: pointer;
         }
 
         img {
@@ -92,45 +72,30 @@
 
     <div class="content-container">
         <div class="content-section" onclick="rotateImage(this)">
-            <div class="front">
-                <h2>Section 1</h2>
-                <p>This is the first content section with a picture:</p>
-                <div class="watermark">A5</div>
-                <img src="picture1.jpg" alt="Picture 1">
-            </div>
-            <div class="back">
-                <!-- White background for the backside -->
-            </div>
+            <h2>Section 1</h2>
+            <p>This is the first content section with a picture:</p>
+            <div class="watermark">A5</div>
+            <img src="picture1.jpg" alt="Picture 1">
         </div>
 
         <div class="content-section" onclick="rotateImage(this)">
-            <div class="front">
-                <h2>Section 2</h2>
-                <p>This is the second content section with a picture:</p>
-                <div class "watermark">A4</div>
-                <img src="picture2.jpg" alt="Picture 2">
-            </div>
-            <div class="back">
-                <!-- White background for the backside -->
-            </div>
+            <h2>Section 2</h2>
+            <p>This is the second content section with a picture:</p>
+            <div class="watermark">A4</div>
+            <img src="picture2.jpg" alt="Picture 2">
         </div>
 
         <div class="content-section" onclick="rotateImage(this)">
-            <div class="front">
-                <h2>Section 3</h2>
-                <p>This is the third content section with a picture:</p>
-                <div class="watermark">A4</div>
-                <img src="picture3.jpg" alt="Picture 3">
-            </div>
-            <div class="back">
-                <!-- White background for the backside -->
-            </div>
+            <h2>Section 3</h2>
+            <p>This is the third content section with a picture:</p>
+            <div class="watermark">A4</div>
+            <img src="picture3.jpg" alt="Picture 3">
         </div>
     </div>
 
     <script>
         function rotateImage(element) {
-            element.querySelector('.front').style.transform = 'rotateY(180deg)';
+            element.style.transform = "rotate(360deg)";
         }
     </script>
 </body>
