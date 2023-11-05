@@ -55,6 +55,11 @@
             border-radius: 5px;
         }
 
+        /* Center the paragraph content */
+        .content-section p {
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             .content-section {
                 width: 90%;
@@ -68,26 +73,26 @@
 </head>
 <body>
     <h1>Arts & Sketches</h1>
-    <p>Welcome to Arts & Sketches, a creative space for art and sketches.</p>
+    <p style="text-align: center;">Welcome to Arts & Sketches, a creative space for art and sketches.</p>
 
     <div class="content-container">
         <div class="content-section" onclick="rotateImage(this)">
             <h2>Section 1</h2>
-            <p>This is the first content section with a picture:</p>
+            <p>This is the first content section with a picture.</p>
             <div class="watermark">A5</div>
             <img src="picture1.jpg" alt="Picture 1">
         </div>
 
         <div class="content-section" onclick="rotateImage(this)">
             <h2>Section 2</h2>
-            <p>This is the second content section with a picture:</p>
+            <p>This is the second content section with a picture.</p>
             <div class="watermark">A4</div>
             <img src="picture2.jpg" alt="Picture 2">
         </div>
 
         <div class="content-section" onclick="rotateImage(this)">
             <h2>Section 3</h2>
-            <p>This is the third content section with a picture:</p>
+            <p>This is the third content section with a picture.</p>
             <div class="watermark">A4</div>
             <img src="picture3.jpg" alt="Picture 3">
         </div>
