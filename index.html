@@ -60,6 +60,25 @@
             text-align: center;
         }
 
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .toggle-button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .toggle-button a {
+            text-decoration: none;
+            color: #fff;
+        }
+
         @media (max-width: 768px) {
             .content-section {
                 width: 90%;
@@ -86,7 +105,7 @@
         <div class="content-section" onclick="rotateImage(this)">
             <h2>Section 2</h2>
             <p>This is the second content section with a picture.</p>
-            <div class="watermark">A4</div>
+            <div class="watermark">A3</div>
             <img src="picture2.jpg" alt="Picture 2">
         </div>
 
@@ -96,6 +115,10 @@
             <div class="watermark">A4</div>
             <img src="picture3.jpg" alt="Picture 3">
         </div>
+    </div>
+
+    <div class="btn-container">
+        <button class="toggle-button"><a href="loginSignUp.html">Sign Up / Log In</a></button>
     </div>
 
     <script>
