@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             background-image: url('your-image-url.jpg'); /* Replace 'your-image-url.jpg' with the path to your background image file */
@@ -14,8 +15,8 @@
 
         .content-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-around;
-            flex-direction: row; /* Set flex direction to horizontal (row) */
         }
 
         .content-section {
@@ -87,6 +88,9 @@
                 font-size: 14px;
                 padding: 2px 5px;
             }
+            .content-container {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -128,4 +132,3 @@
     </script>
 </body>
 </html>
-
