@@ -99,7 +99,7 @@
             element.style.transform = "rotate(360deg)";
         }
 
-        // Create content section with picture4
+        // Create content section with an updated description
         const contentContainer = document.getElementById("content-container");
         const contentSection = document.createElement("div");
         contentSection.className = "content-section";
@@ -107,8 +107,8 @@
             rotateImage(this);
         };
         contentSection.innerHTML = `
-            <h2>Section 4</h2>
-            <p>This is content section 4 with a picture.</p>
+            <h2>Order Your Potrait Now</h2>
+            <p>Till Death We Do Art.</p>
             <div class="watermark">A4</div>
             <img src="picture4.jpg" alt="Picture 4">
         `;
@@ -116,4 +116,5 @@
     </script>
 </body>
 </html>
+
 
