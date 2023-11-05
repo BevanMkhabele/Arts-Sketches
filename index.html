@@ -13,10 +13,14 @@
             padding: 0;
         }
 
-        .content-container {
+        .outer-section {
+            width: 100%; /* Set a fixed width for the outer section */
+            overflow: auto; /* Enable horizontal and vertical scrolling */
+        }
+
+        .inner-section {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            /* Make sure the combined width of inner sections exceeds the outer section's width */
         }
 
         .content-section {
@@ -88,7 +92,7 @@
                 font-size: 14px;
                 padding: 2px 5px;
             }
-            .content-container {
+            .inner-section {
                 justify-content: center;
             }
         }
@@ -98,26 +102,28 @@
     <h1>Arts & Sketches</h1>
     <p style="text-align: center;">Welcome to Arts & Sketches, a creative space for art and sketches.</p>
 
-    <div class="content-container">
-        <div class="content-section" onclick="rotateImage(this)">
-            <h2>Section 1</h2>
-            <p>This is the first content section with a picture.</p>
-            <div class="watermark">A5</div>
-            <img src="picture1.jpg" alt="Picture 1">
-        </div>
+    <div class="outer-section">
+        <div class="inner-section">
+            <div class="content-section" onclick="rotateImage(this)">
+                <h2>Section 1</h2>
+                <p>This is the first content section with a picture.</p>
+                <div class="watermark">A5</div>
+                <img src="picture1.jpg" alt="Picture 1">
+            </div>
 
-        <div class="content-section" onclick="rotateImage(this)">
-            <h2>Section 2</h2>
-            <p>This is the second content section with a picture.</p>
-            <div class="watermark">A3</div>
-            <img src="picture2.jpg" alt="Picture 2">
-        </div>
+            <div class="content-section" onclick="rotateImage(this)">
+                <h2>Section 2</h2>
+                <p>This is the second content section with a picture.</p>
+                <div class="watermark">A3</div>
+                <img src="picture2.jpg" alt="Picture 2">
+            </div>
 
-        <div class="content-section" onclick="rotateImage(this)">
-            <h2>Section 3</h2>
-            <p>This is the third content section with a picture.</p>
-            <div class="watermark">A4</div>
-            <img src="picture3.jpg" alt="Picture 3">
+            <div class="content-section" onclick="rotateImage(this)">
+                <h2>Section 3</h2>
+                <p>This is the third content section with a picture.</p>
+                <div class="watermark">A4</div>
+                <img src="picture3.jpg" alt="Picture 3">
+            </div>
         </div>
     </div>
 
