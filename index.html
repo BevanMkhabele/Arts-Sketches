@@ -14,7 +14,7 @@
 
         .content-container {
             display: flex;
-            flex-wrap: wrap; /* Allow content sections to wrap to the next row on smaller screens */
+            flex-wrap: wrap;
             justify-content: space-around;
         }
 
@@ -23,43 +23,64 @@
             padding: 20px;
             border-radius: 10px;
             border: 5px solid #ffcc00;
-            width: 45%; /* Adjust the width for larger screens */
+            width: 45%;
             margin: 10px;
             position: relative;
             text-align: center;
+            cursor: pointer;
+            perspective: 1000px; /* Add perspective for 3D effect */
+        }
+
+        .content-section:hover .front {
+            transform: rotateY(180deg); /* Rotate the section on hover */
+        }
+
+        .front {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden; /* Hide the back face of the section */
+            transition: transform 0.3s; /* Transition for the image rotation */
+        }
+
+        .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden; /* Hide the back face of the section */
+            transform: rotateY(180deg); /* Initially, show the backside */
         }
 
         img {
             max-width: 100%;
             height: auto;
-            display: block; /* Center the images within their containers */
+            display: block;
         }
 
         h1 {
-            font-size: 48px; /* Decreased the heading size for better readability on smaller screens */
+            font-size: 48px;
             text-align: center;
             margin: 20px 0;
         }
 
         .watermark {
             position: absolute;
-            top: 50%; /* Position the watermark in the middle of the image */
-            left: 50%; /* Position the watermark in the middle of the image */
-            transform: translate(-50%, -50%); /* Center the watermark within the image */
-            font-size: 18px; /* Adjusted the watermark font size for better fit */
-            color: rgba(0, 128, 0, 0.7); /* Greenish color for the watermark */
-            background-color: rgba(255, 255, 255, 0.7); /* Background color with opacity for watermark */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: rgba(0, 128, 0, 0.7);
+            background-color: rgba(255, 255, 255, 0.7);
             padding: 5px 10px;
             border-radius: 5px;
         }
 
         @media (max-width: 768px) {
             .content-section {
-                width: 90%; /* Adjust the width for smaller screens */
+                width: 90%;
             }
-
             .watermark {
-                font-size: 14px; /* Further adjust the watermark font size for smaller screens */
+                font-size: 14px;
                 padding: 2px 5px;
             }
         }
@@ -70,26 +91,47 @@
     <p>Welcome to Arts & Sketches, a creative space for art and sketches.</p>
 
     <div class="content-container">
-        <div class="content-section">
-            <h2>A5 Drawings</h2>
-            <p>This is the first content section with a picture:</p>
-            <div class="watermark">A5</div>
-            <img src="picture1.jpg" alt="Picture 1">
+        <div class="content-section" onclick="rotateImage(this)">
+            <div class="front">
+                <h2>Section 1</h2>
+                <p>This is the first content section with a picture:</p>
+                <div class="watermark">A5</div>
+                <img src="picture1.jpg" alt="Picture 1">
+            </div>
+            <div class="back">
+                <!-- White background for the backside -->
+            </div>
         </div>
 
-        <div class="content-section">
-            <h2>A4 Drawings</h2>
-            <p>This is the second content section with a picture:</p>
-            <div class="watermark">A4</div>
-            <img src="picture2.jpg" alt="Picture 2">
+        <div class="content-section" onclick="rotateImage(this)">
+            <div class="front">
+                <h2>Section 2</h2>
+                <p>This is the second content section with a picture:</p>
+                <div class "watermark">A4</div>
+                <img src="picture2.jpg" alt="Picture 2">
+            </div>
+            <div class="back">
+                <!-- White background for the backside -->
+            </div>
         </div>
 
-        <div class="content-section">
-            <h2>A4 Drawings</h2>
-            <p>This is the third content section with a picture:</p>
-            <div class="watermark">A4</div>
-            <img src="picture3.jpg" alt="Picture 3">
+        <div class="content-section" onclick="rotateImage(this)">
+            <div class="front">
+                <h2>Section 3</h2>
+                <p>This is the third content section with a picture:</p>
+                <div class="watermark">A4</div>
+                <img src="picture3.jpg" alt="Picture 3">
+            </div>
+            <div class="back">
+                <!-- White background for the backside -->
+            </div>
         </div>
     </div>
+
+    <script>
+        function rotateImage(element) {
+            element.querySelector('.front').style.transform = 'rotateY(180deg)';
+        }
+    </script>
 </body>
 </html>
