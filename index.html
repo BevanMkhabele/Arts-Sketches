@@ -99,22 +99,20 @@
             element.style.transform = "rotate(360deg)";
         }
 
-        // Create content sections using a loop
-        for (let i = 1; i <= 3; i++) {
-            const contentContainer = document.getElementById("content-container");
-            const contentSection = document.createElement("div");
-            contentSection.className = "content-section";
-            contentSection.onclick = function () {
-                rotateImage(this);
-            };
-            contentSection.innerHTML = `
-                <h2>Section ${i}</h2>
-                <p>This is content section ${i} with a picture.</p>
-                <div class="watermark">A${i}</div>
-                <img src="picture${i}.jpg" alt="Picture ${i}">
-            `;
-            contentContainer.appendChild(contentSection);
-        }
+        // Create content section with picture4
+        const contentContainer = document.getElementById("content-container");
+        const contentSection = document.createElement("div");
+        contentSection.className = "content-section";
+        contentSection.onclick = function () {
+            rotateImage(this);
+        };
+        contentSection.innerHTML = `
+            <h2>Section 4</h2>
+            <p>This is content section 4 with a picture.</p>
+            <div class="watermark">A4</div>
+            <img src="picture4.jpg" alt="Picture 4">
+        `;
+        contentContainer.appendChild(contentSection);
     </script>
 </body>
 </html>
