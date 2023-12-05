@@ -1,101 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px; /* Adjust the gap between the items */
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+<html>
+  <head>
+    <style>
+      p {
+        margin: 0;
+      }
 
-    .p, button {
-      font-family: arial;
-    }
+      .div-row {
+        font-weight: bold;
+        font-family: Arial;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        position: relative;
+      }
 
-    .div {
-      box-shadow: 5px 2px 10px #888;
-      padding: 15px;
-      width: 230px;
-      margin: 0;
-      border-radius: 10px;
-    }
-    .div{
-    padding-top:80px
-    
-    }
+      .arrow-container {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
 
-    .name {
-      font-weight: bold;
-      font-family: Arial;
-    }
+      .arrow {
+        color: blue;
+        font-size: 20px;
+        font-weight: 300;
+        margin-left: 5px; /* Add this line for a small space between > and text */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div-row">
+      <p>
+        Capitec: Payment +R10000.00 into SAVINGS
+      </p>
+      <p>
+        ACCOUNT; Ref B MKHABELE; Avail R12070.00; 05-...
+      </p>
+      <div class="arrow-container">
+        <div class="arrow">></div>
+      </div>
+    </div>
 
-    .button {
-      background-color: rgb(80, 99, 240);
-      border: none;
-      border-radius: 2px;
-      color: white;
-      font-weight: bold;
-      padding: 8px;
-      transition: opacity 0.2s;
-    }
+    <div class="div-row">
+      <p>
+        Capitec: Payment +R10000.00 into SAVINGS ACCOUNT
+      </p>
+      <p>
+        ACCOUNT; Ref B MKHABELE; Avail R12070.00; 05-...
+      </p>
+      <div class="arrow-container">
+        <div class="arrow">></div>
+      </div>
+    </div>
 
-    .button:active {
-      opacity: 0.5;
-    }
+    <div class="div-row">
+      <p>
+        Capitec: Payment +R10000.00 into SAVINGS ACCOUNT
+      </p>
+      <p>
+        ACCOUNT; Ref B MKHABELE; Avail R12070.00; 05-...
+      </p>
+      <div class="arrow-container">
+        <div class="arrow">></div>
+      </div>
+    </div>
 
-    .mutual {
-      color: gray;
-      font-size: 16px;
-    }
-
-    .cat {
-      box-shadow: 5px 2px 10px #888;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 10px;
-      transition:opacity 0.5;
-    }
-    .cat:active{
-    opacity:0.5;
-    
-    }
-    .cat2{
-      box-shadow: 5px 2px 10px #888;
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 10px;
-      transition:opacity 0.5;
-    
-    }
-  </style>
-</head>
-<body>
-
-<div class="div">
-  <img class="cat" src="cat.jpeg" alt="Cat Image">
-  <div>
-    <p class="name">Bevan</p>
-    <p class="mutual">2 mutual friends</p>
-    <button class="button">Add Friend</button>
-  </div>
-</div>
-
-<div class="div">
-  <img class="cat2" src="cat2.jpeg" alt="Cat Image">
-  <div>
-    <p class="name">John</p>
-    <p class="mutual">3 mutual friends</p>
-    <button class="button">Add Friend</button>
-  </div>
-</div>
-
-</body>
+    <div class="div-row">
+      <p>
+        Capitec: Payment +R10000.00 into SAVINGS ACCOUNT
+      </p>
+      <p>
+        ACCOUNT; Ref B MKHABELE; Avail R12070.00; 05-...
+      </p>
+      <div class="arrow-container">
+        <div class="arrow">></div>
+      </div>
+    </div>
+  </body>
 </html>
