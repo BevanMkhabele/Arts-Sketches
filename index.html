@@ -1,83 +1,55 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      p {
-        margin: 0;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .scrollable-toggle-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #e0e0e0;
+      position: relative;
+    }
 
-      .div-row {
-        font-weight: bold;
-        font-family: Arial;
-        border-bottom: 1px solid #ccc;
-        padding-bottom: 5px;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        position: relative;
-      }
+    .slider {
+      width: 50px;
+      height: 100%;
+      background-color: #4285f4;
+      cursor: grab;
+    }
+  </style>
+</head>
+<body>
 
-      .arrow-container {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-      }
+<div class="scrollable-toggle-bar">
+  <div class="slider" id="slider"></div>
+</div>
 
-      .arrow {
-        color: blue;
-        font-size: 20px;
-        font-weight: 300;
-        margin-left: 5px; /* Add this line for a small space between > and text */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="div-row">
-      <p>
-        Capitec: Payment +R10000.00 into SAVINGS
-      </p>
-      <p>
-        ACCOUNT; Ref B MKHABELE; Avail R12070.00; 05-...
-      </p>
-      <div class="arrow-container">
-        <div class="arrow">></div>
-      </div>
-    </div>
+<script>
+  const slider = document.getElementById('slider');
+  let isDragging = false;
 
-    <div class="div-row">
-      <p>
-        Capitec: Payment +R10000.00 into SAVINGS ACCOUNT
-      </p>
-      <p>
-        ACCOUNT; Ref B MKHABELE; Avail R12070.00; 05-...
-      </p>
-      <div class="arrow-container">
-        <div class="arrow">></div>
-      </div>
-    </div>
+  slider.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    slider.style.cursor = 'grabbing';
+  });
 
-    <div class="div-row">
-      <p>
-        Capitec: Payment +R10000.00 into SAVINGS ACCOUNT
-      </p>
-      <p>
-        ACCOUNT; Ref B MKHABELE; Avail R12070.00; 05-...
-      </p>
-      <div class="arrow-container">
-        <div class="arrow">></div>
-      </div>
-    </div>
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
 
-    <div class="div-row">
-      <p>
-        Capitec: Payment +R10000.00 into SAVINGS ACCOUNT
-      </p>
-      <p>
-        ACCOUNT; Ref B MKHABELE; Avail R12070.00; 05-...
-      </p>
-      <div class="arrow-container">
-        <div class="arrow">></div>
-      </div>
-    </div>
-  </body>
+    const newPosition = e.clientX - slider.offsetWidth / 2;
+    const maxPosition = slider.parentElement.offsetWidth - slider.offsetWidth;
+
+    if (newPosition >= 0 && newPosition <= maxPosition) {
+      slider.style.left = `${newPosition}px`;
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    slider.style.cursor = 'grab';
+  });
+</script>
+
+</body>
 </html>
