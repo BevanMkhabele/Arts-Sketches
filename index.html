@@ -61,7 +61,7 @@
             background-image: url('background_image.jpg'); /* Replace with your image path */
             background-size: cover;
             background-position: center;
-            height: 300px; /* Set a specific height for the div */
+            height: 150px; /* Reduced height by half */
             color: #fff;
             text-align: center;
             padding: 20px;
@@ -84,16 +84,37 @@
             border: 1px solid #ccc;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center text */
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center items horizontally */
         }
 
-        /* Style for the second card */
-        .second-card {
-            max-width: 400px;
-            margin: 20px auto; /* Center the card with some margin */
-            background-color: lightpink; /* Light pink background color */
-            border: 1px solid #ccc;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Style for the card header */
+        .card-header {
+            background-color: #add8e6; /* Light blue background color */
+            color: orange; /* Orange text color */
+            padding: 10px;
+            text-align: left; /* Align text to the left */
+            font-weight: bold; /* Make the text bold */
+            width: 100%; /* Full width for the header */
+        }
+
+        /* Style for the input divs */
+        .input-div {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 100%; /* Full width for the input div */
+        }
+
+        .input-div label {
+            margin-right: 10px;
+        }
+
+        .input-div input {
+            width: 70%; /* Adjust the width as needed */
+            padding: 8px;
         }
     </style>
 </head>
@@ -140,15 +161,24 @@
         
         <!-- First Card -->
         <div class="card">
+            <!-- Card Header -->
+            <div class="card-header">
+                Login
+            </div>
+            <!-- Input Divs -->
+            <div class="input-div">
+                <label for="email">EMAIL ADDRESS:</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="input-div">
+                <label for="password">PASSWORD:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <!-- Card Content -->
             <h3>Card Title</h3>
             <p>This is the content of the card with a light pink background color.</p>
         </div>
 
-        <!-- Second Card -->
-        <div class="second-card">
-            <h3>Second Card Title</h3>
-            <p>This is the content of the second card with a light pink background color.</p>
-        </div>
     </div>
 
     <!-- Rest of your page content goes here -->
@@ -163,7 +193,7 @@
             if (prevScrollPos > currentScrollPos) {
                 document.getElementById("backgroundDiv").style.marginTop = "0";
             } else {
-                document.getElementById("backgroundDiv").style.marginTop = "-300px"; // Adjust based on the height of the background div
+                document.getElementById("backgroundDiv").style.marginTop = "-150px"; // Adjust based on the height of the background div
             }
 
             prevScrollPos = currentScrollPos;
