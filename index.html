@@ -109,12 +109,51 @@
         }
 
         .input-div label {
+            width: 50%;
+            text-align: left;
             margin-right: 10px;
         }
 
         .input-div input {
-            width: 70%; /* Adjust the width as needed */
+            width: 50%; /* Adjust the width as needed */
             padding: 8px;
+        }
+
+        /* Style for the show password checkbox */
+        .show-password {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Align items with space between them */
+            margin-top: 10px;
+            width: 100%; /* Full width for the input div */
+        }
+
+        .show-password label {
+            margin: 0; /* Remove margin */
+        }
+
+        .show-password input {
+            margin: 0; /* Remove margin */
+        }
+
+        /* Style for the login button */
+        .login-button {
+            margin-top: 10px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Style for the black footer */
+        footer {
+            background-color: #000; /* Black background color */
+            color: #fff; /* White text color */
+            text-align: center;
+            padding: 100px; /* Increased padding for a taller footer */
+            width: 100%;
         }
     </style>
 </head>
@@ -174,12 +213,23 @@
                 <label for="password">PASSWORD:</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password">
             </div>
-            <!-- Card Content -->
-            <h3>Card Title</h3>
-            <p>This is the content of the card with a light pink background color.</p>
+            <!-- Show Password Checkbox -->
+            <div class="show-password">
+                <label for="showPassword">Show Password</label>
+                <input type="checkbox" id="showPassword" name="showPassword">
+            </div>
+            <!-- Login Button -->
+            <div class="login-button">
+                Login
+            </div>
         </div>
 
     </div>
+
+    <!-- Black Footer -->
+    <footer>
+        This is the black footer. You can add your footer content here.
+    </footer>
 
     <!-- Rest of your page content goes here -->
 
