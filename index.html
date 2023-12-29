@@ -1,1335 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Web Page</title>
+    <style>
+        /* Style for the header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #fff; /* White background */
+            color: #000; /* Black text */
+            text-align: center;
+            padding: 20px;
+            z-index: 100; /* Ensure the header appears above other elements */
+        }
 
-<!DOCTYPE html><html lang="en" class="no-js">
-    <head>	
-    <script type="text/javascript">
-var currentActionId = '23';
-var helpDataUrl = "/help-data/2/23";
-</script>
-    <title>LOGIN :: UNIVERSITY PORTAL</title>    <meta name="viewport" content="width&#x3D;device-width,&#x20;initial-scale&#x3D;1,&#x20;shrink-to-fit&#x3D;no">
-<meta name="keywords" content="TUT,Tshwane&#x20;University&#x20;of&#x20;Technology">
-<meta name="description" content="Tshwane&#x20;University&#x20;of&#x20;Technology">
-<meta name="copyright" content="www.olums.org">
-<meta http-equiv="X-UA-Compatible" content="IE&#x3D;edge">    <link href="https&#x3A;&#x2F;&#x2F;media.tut.ac.za&#x2F;p&#x2F;33&#x2F;css&#x2F;opt&#x2F;bootstrap5.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
-<link href="https&#x3A;&#x2F;&#x2F;media.tut.ac.za&#x2F;p&#x2F;33&#x2F;css&#x2F;opt&#x2F;main-css.css" media="screen" rel="stylesheet" type="text&#x2F;css">
-<link href="https&#x3A;&#x2F;&#x2F;media.tut.ac.za&#x2F;p&#x2F;33&#x2F;img&#x2F;favicon.ico" rel="shortcut&#x20;icon" type="image&#x2F;vnd.microsoft.icon">        <script  src="https&#x3A;&#x2F;&#x2F;media.tut.ac.za&#x2F;p&#x2F;33&#x2F;js&#x2F;opt&#x2F;jQuery.min.js"></script>
-<script  src="https&#x3A;&#x2F;&#x2F;media.tut.ac.za&#x2F;p&#x2F;33&#x2F;js&#x2F;opt&#x2F;bootstrap-bundle.min.js"></script>
-<script  src="https&#x3A;&#x2F;&#x2F;media.tut.ac.za&#x2F;p&#x2F;33&#x2F;js&#x2F;opt&#x2F;main.js"></script>    
-</head>    <body>
-        <!-- Preloader -->
-        <div class="preloader">
-            <div class="loaderB">
-                <div class="loader-outter"></div>
-                <div class="loader-inner"></div>
+        /* Style for the div elements inside the header */
+        .header-div {
+            display: flex; /* Use flexbox for layout */
+            align-items: flex-start; /* Align items to the top */
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc; /* Border styling */
+        }
 
-                <div class="indicator"> 
-                    
-                    <svg width="20px" height="20px">
-                        <polyline id="back" points="1 10 10 10 19 10 10 10 10 1 10 19"></polyline>
-                        <!--<polyline id="front" points="1 10 19 10 10 10 1 10"></polyline>-->
-                        <polyline id="frontH" points="10 1 10 19"></polyline>
-                        <polyline id="frontV" points="1 10 19 10"></polyline>
-                    </svg>
-                </div>
-            </div>
-        </div>
-                                        <!-- End Preloader -->
-        <!-- Get Pro Button -->
-                <!-- Header Area -->
-        <header class="header" id="header">
-            <!-- Topbar -->
+        /* Style for the images */
+        .image-left,
+        .image-right {
+            max-height: 100%; /* Make images responsive */
+        }
+
+        .image-left {
+            margin-right: 10px;
+        }
+
+        .image-right {
+            margin-left: auto; /* Move the image to the right */
+        }
+
+        /* Style for buttons in div2 */
+        .button-container {
+            display: flex;
+            justify-content: flex-start; /* Align buttons to the left */
+        }
+
+        .button-container button {
+            margin-right: 10px;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style for the new div with background image */
+        .background-div {
+            background-color: #a8dadc; /* Light blue background color */
+            background-image: url('background_image.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            height: 300px; /* Set a specific height for the div */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 0; /* Initial margin-top */
+            transition: margin-top 0.3s ease-in-out; /* Add smooth transition */
+        }
+
+        /* Style for additional content */
+        .additional-content {
+            height: 800px; /* Adjust the height as needed */
+            background-color: #f0f0f0; /* Example background color for additional content */
+            padding: 20px;
+        }
+
+        /* Style for the first card */
+        .card {
+            max-width: 400px;
+            margin: 0 auto; /* Center the card */
+            background-color: lightpink; /* Light pink background color */
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style for the second card */
+        .second-card {
+            max-width: 400px;
+            margin: 20px auto; /* Center the card with some margin */
+            background-color: lightpink; /* Light pink background color */
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <!-- First div inside the header -->
+        <div class="header-div">
+            <!-- Image aligned to the top left -->
+            <img src="left_image.jpg" alt="Left Image" class="image-left">
             
-
-<div class="topbar">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-5 col-12">
-                <div class="logo">
-                    <a href="/">
-                                                    <img src="https://media.tut.ac.za/p/33/img/12/tut_logo.png" alt="TUT">
-                                            </a>
-                </div>
-
+            <div>
+                <h2>Div 1</h2>
+                <p>This is the content of the first div.</p>
             </div>
-               
-                <div class="col-lg-6 col-12">
-                    <div class="get-quote float-right">
-                        <!-- <a href="" class="btn-control">Login</a>                                 -->
-                        <!-- <a href="" class="btn-control">Register</a> -->
-                        <img src="https://media.tut.ac.za/p/33/img/olums_logo.png">
-                    </div>
-                </div>
-                 
-        </div>
-    </div>
-</div>            <!-- End Topbar -->
-            <!-- Header Inner -->
-                        <nav class="navbar navbar-expand-lg bot-menu">
-    <div class="container">
-        <div class="col-12 px-3">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon bi bi-list"></span>
-            </button>
-                             <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-<!--                    <li class="nav-item"><a class="dropdown-toggle nav-link" data-bs-toggle="dropdown" role="menu" aria-expanded="false">Institution Structure</a>
-                        <ul class="dropdown-menu  dropdown-large large-sub-menu max-width-450" role="menu">
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <ul class="list-unstyled d-flex flex-wrap">
-                                        <li><a class="nav-link" href="">Graphical Representation University Structure</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </ul>
-                    </li>-->
-                                        <!--<li class="nav-item">-->
-                        <!--<a class="nav-link" href="/institution-detail-info/">Institution Structure</a>-->
-                    <!--</li>-->
-                                 <!--<li class="nav-item">
-                        <a class="nav-link" href="">Institution Structure</a>
-                    </li> -->
-<!--                    <li class="nav-item">
-                        <a class="nav-link" href="https://play.google.com/store/apps/details?id=dut.placement.portal&hl=en_IN&gl=US">DOWNLOAD APP</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="/add-ticket-guest">Contact Us</a>
-                    </li> 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/videos">videos</a>
-                    </li> 
-
-                </ul>
-                </div>
-                     </div>
-    </div>
-</nav>
-<div id="model-window" class="modal">
-    <div id="windowHeader" class="modal-header">
-        <span id="window_title"></span>
-        
-    </div>
-    <div id="windowContent" class="madal-body xts-window-content" >
-        
-    </div>
-</div>
             
-            <!--/ End Header Inner -->
-        </header>
-        <!-- End Header Area -->
-        <!-- Slider Area -->
-        
-<section class="bnner-section in-pg-bnner">
-    <div class="container">
-        <div class="bn-bx">
-            <div class="bn-hdng">
-                <div class="back_">
-                    <a title="Previous Page" href="javascript:void(0);" onclick="window.history.go(-1);">
-                        <img src="https://media.tut.ac.za/p/33/img/icons/chevron-left.svg">
-                    </a>
-                </div>
-                <div class="back_ forwd">
-                    <a title="Next Page" href="javascript:void(0);" onclick="window.history.go(1);">
-                        <img src="https://media.tut.ac.za/p/33/img/icons/chevron-right.svg">
-                    </a>
-                </div>
-                <!-- Welcome to the University Portal for the Placement of University Students and Graduates-->
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <h1 class="text-uppercase">LOGIN</h1>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Image aligned to the top right -->
+            <img src="right_image.jpg" alt="Right Image" class="image-right">
         </div>
-    </div>
-</section>        <!--/ End Slider Area -->
-        <div class="content_wrapper">
- 
-<link href="https://media.tut.ac.za/p/33/css/opt/form-css.css" media="screen" rel="stylesheet" type="text/css">
-<style type="text/css">
-    input[type="checkbox"] {
-        display: unset;
-    }
-</style>
 
-<section id="form-data">
-    <div class="container">
-        <form method="post" name="frm_login" action="&#x2F;login" class="form-horizontal" id="frm_login">        <div class="card jobpanelC col-md-8 col-lg-8 col-sm-8 col-12 m-auto">    
-            <div class="card-header pHeadC">LOGIN</div>
-            <div class="p-4">
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group row">
-                        <label class="col-sm-6&#x20;col-12&#x20;text-sm-left&#x20;text-lg-end" for="u_email">EMAIL ADDRESS : <span class='required'> * </span></label>                        <div class="col-md-5 col-lg-5 col-12">
-                            <input type="text" name="email" class="form-control&#x20;col-sm-12" placeholder="ex.&#x20;joe.soap&#x40;gmail.com" id="u_email" autocomplete="off" minlength="6" maxlength="150" value="">                                                    </div>
-                    </div>  
-                </div>
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group row">
-                        <label class="col-sm-6&#x20;col-12&#x20;text-sm-left&#x20;text-lg-end" for="password">PASSWORD : <span class='required'> * </span></label>                        <div class="col-md-5 col-lg-5 col-12">
-                            <input type="password" name="password" class="form-control&#x20;col-sm-12" autocomplete="off" minlength="6" maxlength="64" id="password" value="">                                                    </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6">
-                        <input type="checkbox" onclick="showStPassword()"> Show Password
-                    </div>
-                    </div>
-                <div class="col-lg-12 col-md-12 col-12 display-none" id="agreement">
-                    <div class="form-group row">
-                        <label for="text" class="col-sm-6 text-sm-start text-lg-end">
-                            DECLARATION AND UNDERTAKING : <span class="danger-red">*</span>
-                        </label>
-                        <div class="col-md-6 col-lg-6 col-12">
-                            <input type="checkbox" id="popi_status"  value="1" class="checkbox1 chkboxes" name="chkboxPopi"  onclick="popupBoot('/login-popi-agreement/1', 'DECLARATION AND UNDERTAKING')" style="color:blue;"  style="color:blue;">
-                            <span style="color:blue;">I ACCEPT THE DECLARATION AND UNDERTAKING</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <!--<div class="col-md-8 mb-3">-->
-                    <input type="hidden" name="csrf" value="c606f0517eed4ba6af9e0135038f8128-c719e8976402030301db1f9f3507a70c">                    <div id="enable-button" class="row justify-content-center">
-                        
-                        <div class="col-lg-12 col-md-12 col-12 text-sm-center text-xl-center">
-                            <input type="submit" name="btn_login" id="btn_login" class="btn&#x20;form-sub-btn" value="LOGIN">                        </div>
-
-
-                    </div>
-                    <div id ="disable-button" class="row justify-content-center display-none">
-                        <div class="col-lg-12 col-md-12 col-12 text-sm-center text-xl-center">
-                            <input type="submit" name="btn_login_disable" id="btn_login_disable" class="btn&#x20;&#x20;form-sub-btn&#x20;link-button-trans" value="LOGIN">                        </div>
-                    </div>
-                    <!--</div>-->
-                </div>
-                <div class="col-lg-12 col-md-12 col-12">
-                    <div class="form-group row">
-                        <div class="col-lg-6 col-md-6 col-6 text-left text-primary">
-                            <a class="text-primary" href="/forgot-password" >Forgot Password ?</a>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-6 text-right text-primary">
-                            <a class="text-primary" href="/register-step1">Not yet Registered ? Click here</a>
-                        </div>
-                    </div>
-                </div>
+        <!-- Second div inside the header -->
+        <div class="header-div">
+            <h2>Div 2</h2>
+            <!-- Button container aligned to the left -->
+            <div class="button-container">
+                <button>Button 1</button>
+                <button>Button 2</button>
+                <button>Button 3</button>
             </div>
         </div>
-        </form>    </div>
-</section>
-<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header popup-header-bg" id="windowHeader">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                <span class="text-right">
-                    <a type="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapseOne" data-bs-target="#trackRecruit">
-                        <img src="https://media.tut.ac.za/p/33/img/icons/chevron-down.svg">
-                    </a>
-                    <a type="button" id="close" onclick="closeWindowPop()" aria-label="Close"><img src="https://media.tut.ac.za/p/33/img/icons/close.svg"></a>
-                </span>
-            </div>
-            <div id="trackRecruit" class="popup-accordion accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="modal-body"  id="windowContent">
+    </header>
 
-                </div>
-            </div>
+    <!-- New div with background image below the header -->
+    <div class="background-div" id="backgroundDiv">
+        <h2>Background Div</h2>
+        <p>This is the content of the div with a light blue background color.</p>
+    </div>
+
+    <!-- Additional content below the background div -->
+    <div class="additional-content">
+        <h2>Additional Content</h2>
+        <p>This is additional content below the background div. Scroll down to see more.</p>
+        
+        <!-- First Card -->
+        <div class="card">
+            <h3>Card Title</h3>
+            <p>This is the content of the card with a light pink background color.</p>
+        </div>
+
+        <!-- Second Card -->
+        <div class="second-card">
+            <h3>Second Card Title</h3>
+            <p>This is the content of the second card with a light pink background color.</p>
         </div>
     </div>
-</div>
 
-        
+    <!-- Rest of your page content goes here -->
 
-<!-- Start Newsletter Area -->
-	<section class="newsletter section">
-		<div class="container">
-				<div class="col-lg-12 col-md-12 col-sm-12  col-12">
-					<!-- Start Newsletter Form -->
-					<div class="subscribe-textt">
-											</div>
-					<!-- End Newsletter Form -->
-				</div>
-		</div>
-		<!-- <div class="col-lg-4  col-12"> -->
-			<!-- Start Newsletter Form -->
-			<!-- <div class="subscribe-form "> -->
-				
-			<!-- </div> -->
-			<!-- End Newsletter Form -->
-		<!-- </div> -->
-	</section>
-<!-- /End Newsletter Area -->        <!-- Footer Area -->
-        <footer id="footer" class="footer ">
-            
+    <script>
+        // JavaScript to handle the scroll behavior
+        var prevScrollPos = window.pageYOffset;
 
-<footer>
-    <div class="ft-bx-ar">
-        <div class=" container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-12 text-center">
-                    <ul>
-                        <li><a href="/" class="text-white">
-                            <img src="https://media.tut.ac.za/p/33/img/icons/caret-right-fill.svg"> &nbsp; HOME</a></li>
-                    </ul>
-                </div>
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
 
-                <div class="col-lg-4 col-md-4 col-12 text-center">
-<!--                    <ul>
-                        <li><a href="/national-university-hierarchy" class="text-white">
-                            <img src="https://media.tut.ac.za/p/33/img/icons/caret-right-fill.svg"> &nbsp; HIERARCHY</a></li>
-                    </ul>-->
-                   
-                </div>
+            if (prevScrollPos > currentScrollPos) {
+                document.getElementById("backgroundDiv").style.marginTop = "0";
+            } else {
+                document.getElementById("backgroundDiv").style.marginTop = "-300px"; // Adjust based on the height of the background div
+            }
 
-                <div class="col-lg-4 col-md-4 col-12 text-center">
-                    <ul>
-                        <li><a href="/tutorials" class="text-white"><img src="https://media.tut.ac.za/p/33/img/icons/caret-right-fill.svg"> &nbsp; TUTORIALS</a></li>
-                    </ul>
-                </div>
+            prevScrollPos = currentScrollPos;
+        }
+    </script>
 
-            </div>
-        </div>
-    </div>
-            
-
-
-<div class="ft-bt-bx">
-    <div class="container">
-        <div class="cont_detail">
-            <div class="footer-box">
-                <div class="cont_detail_inner d-flex flex-column flex-sm-row justify-content-between">
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <p class="mar-30 whitte text-center">You Should Stay In Touch !</p>
-        <ul class="social-icon mb-4">
-                        <li>
-              <a class="fb" target="_blank" href="https://www.facebook.com/Tshwane-Institute-of-Technology-101407728063240/"><img src="https://media.tut.ac.za/p/33/img/icons/facebook.svg"></a>
-            </li>
-                         
-            <li>
-              <a class="tw" target="_blank" href="https://twitter.com/Official_TUT?lang=en"><img src="https://media.tut.ac.za/p/33/img/icons/twitter.svg"></a>
-            </li>
-                                     <li>
-              <a class="gl" target="_blank" href="https://www.linkedin.com/school/tshwane-university-of-technology/?originalSubdomain=za"><img src="https://media.tut.ac.za/p/33/img/icons/linkedin.svg"></a>
-            </li>
-                         
-        </ul>
-                    <p class="cpyrt text-center whitte">Copyright © 2023 University Portal. All rights Reserved.</p>
-                 <p class="cpyrt text-center whitte"><span style="color:#262626">vs.202312291148</span></p>
-    </div>
-  </div>
-<div id="short-info">
-    
-</div>    
-        
-</footer>
-
-<div class="announcement-txt fixed-bottom">
-    <div class="page2 foo_er">
-        <marquee behavior="scroll" scrollamount="2" direction="left" onmouseover="jQuery(this).attr('scrollamount','0');" onmouseout="jQuery(this).attr('scrollamount','2');"class="text-white">
-            <span id="announcement" class="text-white"></span>
-        <span class="text-white"></span>
-        </marquee>
-        <span class="tt-le">
-                Announcements        </span>
-        <span class="tt-le upd">REF - 023</span>
-    </div>
-</div>
-
-
-
-
-<style>
-
-    input[type="checkbox"] + label::before {
-        font-family: bootstrap-icons;
-        display: inline-block;
-        color: rgb(231,128,6);
-        content: ' ';
-        /*background-image: url('../../img/icons/square.svg');*/
-        background-image: url('https://media.tut.ac.za/p/33/img/icons/square.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 1rem;
-        height: 1rem;
-        vertical-align: middle;
-        margin-right: 3px;
-    }
-
-    input[type="checkbox"]:checked + label::before {
-        content: ' ';
-        /*background-image: url('../../img/icons/check2-square.svg*/
-        background-image: url('https://media.tut.ac.za/p/33/img/icons/check2-square.svg');
-    }
-
-    #confirmOverlay_n {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        /*background: url('../../img/ie.png');*/
-        background: url('https://media.tut.ac.za/p/33/img/ie.png');
-        background: -moz-linear-gradient(rgba(11,11,11,0.7), rgba(11,11,11,0.7)) repeat-x rgba(11,11,11,0.7);
-        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11,11,11,0.7)), to(rgba(11,11,11,0.7))) repeat-x rgba(11,11,11,0.7);
-        z-index: 100000;
-    }
-    .confirmOverlay_n {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        /*background: url('../../img/ie.png');*/
-        background: url('https://media.tut.ac.za/p/33/img/ie.png');
-        background: -moz-linear-gradient(rgba(11,11,11,0.7), rgba(11,11,11,0.7)) repeat-x rgba(11,11,11,0.7);
-        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11,11,11,0.7)), to(rgba(11,11,11,0.7))) repeat-x rgba(11,11,11,0.7);
-        z-index: 100000;
-    }
-    .midP {
-        /*background: url(../../img/back_orange.png) no-repeat;*/
-        background: url('https://media.tut.ac.za/p/33/img/back_orange.png') no-repeat;
-        background-position: center;
-        background-position: left 0px top 40px;
-    }
-
-    .glyphicon.glyphicon-time {
-        /*background-image: url('../../img/icons/clock.svg');*/
-        background-image: url('https://media.tut.ac.za/p/33/img/icons/clock.svg');
-        background-size: fill;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 20px;
-        width: 16px;
-        display: inline-block;
-        margin: auto 5px;
-    }
-
-
-    .firstP,.lastP {
-        /*background: url(../../img/back_orange.png) no-repeat;*/
-        background: url('https://media.tut.ac.za/p/33/img/back_orange.png') no-repeat;
-    }
-
-    .bnner-section.in-pg-bnner {
-        /*background-image: url(../../img/hire.png);*/
-        background-image: url('https://media.tut.ac.za/p/33/img/hire.png');
-        background-attachment: scroll;
-        background-attachment: fixed;
-    }
-
-    .bnner-section {
-        /*background-image: url(../../img/laptop.jpg);*/
-        background-image: url('https://media.tut.ac.za/p/33/img/laptop.jpg');
-        background-repeat: no-repeat;
-        background-position: top center;
-        max-width: 100%;
-        position: relative;
-        height: auto;
-        padding: 4rem 0;
-        background-size: cover;
-        z-index: 0;
-        background-attachment: fixed;
-    }
-
-    .welcometop h1{
-        font-size: 16px;
-        font-weight: 600;
-        color: #111;
-        padding: 4px 0 4px 28px;
-        /*background-image: url(../../img/main_heading.png) no-repeat left center;*/
-        background-image: url('https://media.tut.ac.za/p/33/img/main_heading.png')no-repeat left center;
-        border-bottom: 1px dotted #78a2d7;
-        display: block;
-    }
-
-    .down-arrow {
-        float: inline-end;
-        /*background-image: url('../../img/icons/arrow-down-short.svg');*/
-        background-image: url('https://media.tut.ac.za/p/33/img/icons/arrow-down-short.svg');
-        width: 24px;
-        height: 24px;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-
-    .faq-accordion.accordion .card-header:after {
-        font-family: 'FontAwesome';
-        content: " ";
-        /*background-image: url(../../img/icons/minus-solid.svg);*/
-        background-image: url('https://media.tut.ac.za/p/33/img/icons/minus-solid.svg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 1rem;
-        height: 1rem;
-        float: right;
-        margin-top: 0.5rem;
-    }
-
-    .faq-accordion.accordion .card-header.collapsed:after {
-        content: " ";
-        /*background-image: url(../../img/icons/plus-lg.svg);*/
-        background-image: url('https://media.tut.ac.za/p/33/img/icons/plus-lg.svg');        
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 1rem;
-        height: 1rem;
-        margin-top: 0.5rem;
-    }
-    .tTipF {
-        /*background-image: url(../../img/icons/question-circle-fill.svg) no-repeat center #c9bfbf;*/
-        background-image: url('https://media.tut.ac.za/p/33/img/icons/question-circle-fill.svg') no-repeat center #c9bfbf;    
-        cursor: pointer;
-        border-radius: 50%;
-        color: #d71a1a;
-        font-size: 18px;
-        height: 26px;
-        margin-left: 5px;
-        padding: 0px 0px 0px 4px;
-        width: 26px;
-        z-index: 5;
-    }
-</style>
-
-<style type="text/css">
-
-    .xts-grid-column-menubutton {
-        border-style: solid;
-        border-width: 0 0 0 1px;
-        border-color: transparent;
-        /*background-image: url(../../img/menubutton.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/menubutton.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-    }
-
-    .xts-grid-column-sortascbutton {
-        border: none;
-        /*background-image: url(../../img/sortascbutton.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/sortascbutton.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-    }
-
-    .xts-grid-column-sortdescbutton {
-        border: none;
-        /*background-image: url(../../img/sortdescbutton.png);*/
-        background-image: url();
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-    }
-
-    .xts-grid-column-filterbutton {
-        border: none;
-        /*background-image: url(../../img/filter.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/filter.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-grid-validation-arrow-up {
-        /*background-image: url(../../img/red_arrow_up.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/red_arrow_up.png);
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
-
-    .xts-grid-validation-arrow-down {
-        /*background-image: url(../../img/red_arrow_down.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/red_arrow_down.png);
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
-
-    .xts-grid-sortasc-icon {
-        /*background-image: url(../../img/sortasc.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/sortasc.png);
-        background-repeat: no-repeat;
-        background-position: left center;
-        width: 16px;
-        height: 16px;
-        float: left;
-        margin-left: -4px;
-        margin-right: 4px;
-    }
-
-    .xts-grid-sortdesc-icon {
-        /*background-image: url(../../img/sortdesc.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/sortdesc.png);
-        background-repeat: no-repeat;
-        background-position: left center;
-        width: 16px;
-        height: 16px;
-        float: left;
-        margin-left: -4px;
-        margin-right: 4px;
-    }
-
-    .xts-grid-sortremove-icon {
-        /*background-image: url(../../img/sortremove.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/sortremove.png);
-        background-repeat: no-repeat;
-        background-position: left center;
-        width: 16px;
-        height: 16px;
-        float: left;
-        margin-left: -4px;
-        margin-right: 4px;
-    }
-
-    .xts-grid-drag-icon {
-        /*background-image: url(../../img/drag.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/drag.png);
-        background-repeat: no-repeat;
-        background-position: left center;
-        width: 16px;
-        height: 16px;
-    }
-
-    .xts-grid-dragcancel-icon {
-        /*background-image: url(../../img/dragcancel.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/dragcancel.png);
-        background-repeat: no-repeat;
-        background-position: left center;
-        width: 16px;
-        height: 16px;
-    }
-
-    .xts-grid-load {
-        padding-right: 0;
-        /*background-image: url(../../img/loader.gif);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/loader.gif);
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        z-index: 9999;
-        display: block;
-    }
-
-    .xts-grid-group-collapse {
-        padding-right: 0;
-        /*background-image: url(../../img/icon-right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-right.png);
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        cursor: pointer;
-    }
-
-    .xts-grid-group-collapse-rtl {
-        padding-right: 0;
-        /*background-image: url(../../img/icon-left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-left.png);
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        cursor: pointer;
-    }
-
-    .xts-grid-group-expand,.xts-grid-group-expand-rtl {
-        padding-right: 0;
-        /**background-image: url(../../img/icon-down.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-down.png);
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        cursor: pointer;
-    }
-
-    .xts-menu-item-arrow-right {
-        /*background-image: url(../../img/icon-right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-right.png);
-    }
-
-    .xts-menu-item-arrow-down {
-        /**background-image: url(../../img/icon-down.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-down.png);
-    }
-
-    .xts-menu-item-arrow-up {
-        /**background-image: url(../../img/icon-up.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-up.png);
-    }
-
-    .xts-menu-minimized-button {
-        /*background-image: url(../../img/icon-menu-minimized.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-menu-minimized.png);
-        background-repeat: no-repeat;
-        background-position: left center;
-        height: 24px;
-        width: 24px;
-        padding: 0;
-        margin-left: 7px;
-        margin-top: 4px;
-        float: left;
-    }
-
-    .xts-menu-item-arrow-left {
-        padding-right: 0;
-        padding-left: 5px;
-        width: 17px;
-        height: 15px;
-        /*background-image: url(../../img/icon-left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-left.png);
-        background-position: 0 50%;
-        background-repeat: no-repeat;
-    }
-
-    .xts-menu-item-arrow-right-selected {
-        /*background-image: url(../../img/icon-right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-right.png);
-    }
-
-    .xts-menu-item-arrow-down-selected {
-        /**background-image: url(../../img/icon-down.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-down.png);
-    }
-
-    .xts-menu-item-arrow-up-selected {
-        /**background-image: url(../../img/icon-up.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-up.png);
-    }
-
-    .xts-menu-item-arrow-top-right {
-        /*background-image: url(../../img/icon-right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-right.png);
-    }
-
-    .xts-menu-item-arrow-left-selected {
-        /*background-image: url(../../img/icon-left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-left.png);
-    }
-
-    .xts-menu-item-arrow-top-left {
-        /*background-image: url(../../img/icon-left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-left.png);
-    }
-
-    .xts-tree-item-arrow-collapse,.xts-tree-item-arrow-collapse-hover {
-        padding-right: 0;
-        width: 17px;
-        height: 17px;
-        /*background-image: url(../../img/icon-right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-right.png);
-        background-position: 100% 50%;
-        background-repeat: no-repeat;
-        cursor: pointer;
-    }
-
-    .xts-tree-item-arrow-collapse-rtl,.xts-tree-item-arrow-collapse-hover-rtl {
-        /*background-image: url(../../img/icon-left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-left.png);
-    }
-
-    .xts-tree-item-arrow-expand,.xts-tree-item-arrow-expand-hover {
-        padding-right: 0;
-        width: 17px;
-        height: 17px;
-        /**background-image: url(../../img/icon-down.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-down.png);
-        background-position: 100% 50%;
-        background-repeat: no-repeat;
-        cursor: pointer;
-    }
-
-    .xts-tabs-close-button {
-        outline: none;
-        /*background-image: url(../../img/close.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        left: 5px;
-    }
-
-    .xts-tabs-close-button-selected {
-        outline: none;
-        /*background-image: url(../../img/close.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-    }
-
-    .xts-tabs-close-button-hover {
-        outline: none;
-        /*background-image: url(../../img/close.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-    }
-
-    .xts-tabs-close-button {
-        outline: none;
-        /*background-image: url(../../img/close.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-        position: relative;
-        left: 5px;
-    }
-
-    .xts-tabs-close-button-selected {
-        outline: none;
-        /*background-image: url(../../img/close.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-    }
-
-    .xts-tabs-close-button-hover {
-        outline: none;
-        /*background-image: url(../../img/close.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-    }
-
-    .xts-tabs-arrow-left {
-        outline: none;
-        position: relative;
-        z-index: 15;
-        float: left;
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-        /*background-image: url(../../img/icon-left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-left.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-tabs-arrow-right {
-        outline: none;
-        position: relative;
-        z-index: 15;
-        /*background-image: url(../../img/icon-right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-right.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        float: left;
-        cursor: pointer;
-        margin: 0;
-        padding: 0;
-    }
-
-    .xts-rating-image-default {
-        margin: 0;
-        padding: 0;
-        outline: none;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        /*background-image: url(../../img/star.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/star.png);
-        overflow: hidden;
-    }
-
-    .xts-rating-image-hover {
-        background-color: transparent;
-        padding: 0;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        /*background-image: url(../../img/star_hover.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/star_hover.png);
-        overflow: hidden;
-    }
-
-    .xts-rating-image-backward {
-        background-color: transparent;
-        padding: 0;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        /*background-image: url(../../img/star_disabled.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/star_disabled.png);
-        overflow: hidden;
-    }
-
-    .xts-window-close-button {
-        cursor: pointer;
-        /*background-image: url(../../img/close.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        background-repeat: no-repeat;
-    }
-
-    .xts-window-collapse-button {
-        /**background-image: url(../../img/icon-up.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-up.png);
-        cursor: pointer;
-        margin-top: 1px;
-    }
-
-    .xts-window-collapse-button-collapsed {
-        margin-top: 0;
-        cursor: pointer;
-        /**background-image: url(../../img/icon-down.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-down.png);
-    }
-
-    .xts-slider-slider-horizontal {
-        /*background-image: url(../../img/slider_horizontal_classic.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/slider_horizontal_classic.png);
-        background-repeat: no-repeat;
-        margin-top: -5px;
-        -moz-border-radius: 7px;
-        -webkit-border-radius: 7px;
-        border-radius: 7px;
-        border: 1px solid transparent;
-    }
-
-    .xts-slider-slider-vertical {
-        margin-left: -5px;
-        /*background-image: url(../../img/slider_vertical_classic.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/slider_vertical_classic.png);
-        background-repeat: no-repeat;
-        -moz-border-radius: 7px;
-        -webkit-border-radius: 7px;
-        border-radius: 7px;
-        border: 1px solid transparent;
-    }
-
-    .xts-validator-hint-arrow {
-        z-index: 99999;
-        height: 9px;
-        width: 9px;
-        padding: 0;
-        margin: 0;
-        background-color: transparent;
-        /*background-image: url(../../img/multi-arrow.gif);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/multi-arrow.gif);
-    }
-
-    .xts-left-arrow {
-        background: transparent;
-        /*background-image: url(../../img/left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/left.png);
-        cursor: pointer;
-    }
-
-    .xts-right-arrow {
-        background: transparent;
-        /*background-image: url(../../img/right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/right.png);
-        cursor: pointer;
-    }
-
-    .xts-icon-delete {
-        /*background-image: url(../../img/icon-delete.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-delete.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-edit {
-        /*background-image: url(../../img/icon-edit.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-edit.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-save {
-        /*background-image: url(../../img/icon-save.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-save.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-cancel {
-        /*background-image: url(../../img/icon-cancel.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-cancel.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-up,.xts-icon-arrow-up-hover,.xts-icon-arrow-up-selected {
-        /**background-image: url(../../img/icon-up.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-up.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-down,.xts-icon-arrow-down-hover,.xts-icon-arrow-down-selected {
-        /**background-image: url(../../img/icon-down.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-down.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-left,.xts-icon-arrow-left-hover,.xts-icon-arrow-left-selected {
-        /*background-image: url(../../img/icon-left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-left.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-right,.xts-icon-arrow-right-hover,.xts-icon-arrow-right-selected {
-        /*background-image: url(../../img/icon-right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-right.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-first,.xts-icon-arrow-first-hover,.xts-icon-arrow-first-selected {
-        /*background-image: url(../../img/icon-first.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-first.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-last,.xts-icon-arrow-last-hover,.xts-icon-arrow-last-selected {
-        /*background-image: url(../../img/icon-last.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-last.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-up-hover {
-        /**background-image: url(../../img/icon-up.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-up.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-down-hover {
-        /**background-image: url(../../img/icon-down.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-down.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-left-hover {
-        /*background-image: url(../../img/icon-left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-left.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-right-hover {
-        /*background-image: url(../../img/icon-right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-right.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-up-selected {
-        /**background-image: url(../../img/icon-up.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-up.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-down-selected {
-        /**background-image: url(../../img/icon-down.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/icon-down.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-left-selected {
-        /*background-image: url(../../img/icon-left.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-left.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-arrow-right-selected {
-        /*background-image: url(../../img/icon-right.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-right.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-close {
-        cursor: pointer;
-        /**background-image: url(../../img/close.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-close-hover {
-        cursor: pointer;
-        /**background-image: url(../../img/close.png);*/
-        *background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    .xts-icon-search {
-        cursor: pointer;
-        /*background-image: url(../../img/search.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/search.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-top: 1px;
-        background-size: 13px;
-        width: 13px;
-        height: 13px;
-    }
-
-    .xts-icon-plus {
-        /*background-image: url(../../img/plus.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/plus.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 16px;
-        width: 16px;
-        height: 16px;
-    }
-
-    .xts-icon-calendar,.xts-icon-calendar-hover,.xts-icon-calendar-pressed {
-        /*background-image: url(../../img/icon-calendar.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-calendar.png);
-        background-repeat: no-repeat;
-        background-position: left top;
-        position: relative;
-        width: 15px!important;
-        height: 15px!important;
-        margin-top: -7.5px!important;
-    }
-
-    .xts-color-picker-map {
-        border: 1px solid #A0A0A0;
-        background-color: transparent;
-        /*background-image: url(../../img/colorpicker/map-saturation.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/colorpicker/map-saturation.png);
-        background-repeat: no-repeat;
-        background-position: left top;
-        overflow: hidden;
-    }
-
-    .xts-color-picker-map-hue {
-        border: 1px solid #A0A0A0;
-        background-color: transparent;
-        /*background-image: url(../../img/colorpicker/map-hue.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/colorpicker/map-hue.png);
-        background-repeat: no-repeat;
-        background-position: left top;
-        overflow: hidden;
-    }
-
-    .xts-color-picker-map-overlay {
-        background-color: transparent;
-        /*background-image: url(../../img/colorpicker/map-saturation-overlay.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/colorpicker/map-saturation-overlay.png);
-        background-repeat: no-repeat;
-        background-position: left top;
-    }
-
-    .xts-color-picker-bar {
-        border: 1px solid #A0A0A0;
-        background-color: transparent;
-        /*background-image: url(../../img/colorpicker/bar-saturation.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/colorpicker/bar-saturation.png);
-        background-repeat: no-repeat;
-        background-position: left top;
-    }
-
-    .xts-color-picker-bar-hue {
-        border: 1px solid #A0A0A0;
-        background-color: transparent;
-        /*background-image: url(../../img/colorpicker/bar-hue.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/colorpicker/bar-hue.png);
-        background-repeat: no-repeat;
-        background-position: left top;
-    }
-
-    .xts-color-picker-preview {
-        border: 1px solid #A0A0A0;
-    }
-
-    .xts-color-picker-pointer {
-        /*background-image: url(../../img/crosshair.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/crosshair.png);
-        background-repeat: no-repeat;
-        height: 16px;
-        width: 16px;
-    }
-
-    .xts-color-picker-pointer-alt {
-        /*background-image: url(../../img/crosshair-white.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/crosshair-white.png);
-        background-repeat: no-repeat;
-        height: 16px;
-        width: 16px;
-    }
-
-    .xts-color-picker-bar-pointer {
-        /*background-image: url(../../img/pointer.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/pointer.png);
-        background-repeat: no-repeat;
-        height: 15px;
-        margin-left: 6px;
-        background-position: right top;
-    }
-
-    .xts-passwordinput-password-icon,.xts-passwordinput-password-icon-rtl {
-        /*background-image: url(../../img/icon-showpassword.png)!important;*/
-        background-image: url(https://media.tut.ac.za/p/33/img/icon-showpassword.png)!important;
-        background-repeat: no-repeat!important;
-        width: 14px;
-        height: 9px;
-    }
-
-    .xts-notification-icon-info {
-        /*background-image: url(../../img/info.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/info.png);
-    }
-
-    .xts-notification-icon-warning {
-        /*background-image: url(../../img/warning.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/warning.png);
-    }
-
-    .xts-notification-icon-success {
-        /*background-image: url(../../img/success.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/success.png);
-    }
-
-    .xts-notification-icon-error {
-        /*background-image: url(../../img/error.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/error.png);
-    }
-
-    .xts-notification-icon-mail {
-        /*background-image: url(../../img/mail.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/mail.png);
-    }
-
-    .xts-notification-icon-time {
-        /*background-image: url(../../img/time.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/time.png);
-    }
-
-    .xts-notification-close-button-info,.xts-notification-close-button-success,.xts-notification-close-button-mail,.xts-notification-close-button-time,.xts-notification-close-button-error {
-        /*background-image: url(../../img/close_white.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close_white.png);
-    }
-
-    .xts-notification-close-button-warning {
-        /*background-image: url(../../img/close_black.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close_black.png);
-    }
-    .btn-close{
-        /*background-image: url(../../img/close.png);*/
-        background-image: url(https://media.tut.ac.za/p/33/img/close.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 1rem;
-        height: 1rem;
-        display: inline-block;
-    }
-
-    .xts-checkbox-check-checked {
-        float: left;
-        /*background: transparent url(/img/check_black.png) center center no-repeat;*/
-        background-image: url(https://media.tut.ac.za/p/33/img/check_black.png)center center no-repeat;
-        padding: 0;
-        border: none;
-        outline: none;
-        margin: 0;
-    }
-
-    .xts-checkbox-check-disabled {
-        float: left;
-        /*background: transparent url(/img/check_disabled.png) center center no-repeat;*/
-        background-image: url(https://media.tut.ac.za/p/33/img/check_disabled.png)center center no-repeat;
-        padding: 0;
-        border: none;
-        outline: none;
-        margin: 0;
-    }
-
-    .xts-checkbox-check-indeterminate {
-        float: left;
-        /*background: transparent url(/img/check_indeterminate_black.png) center center no-repeat;*/
-        background-image: url(https://media.tut.ac.za/p/33/img/check_indeterminate_black.png)center center no-repeat;
-        padding: 0;
-        border: none;
-        outline: none;
-        margin: 0;
-    }
-
-    .xts-checkbox-check-indeterminate-disabled {
-        float: left;
-        /*background: transparent url(/img/check_indeterminate_disabled.png) center center no-repeat;*/
-        background-image: url(https://media.tut.ac.za/p/33/img/check_indeterminate_disabled.png)center center no-repeat;
-        padding: 0;
-        border: none;
-        outline: none;
-        margin: 0;
-    }
-
-    .xts-radiobutton-default {
-        cursor: pointer;
-        float: left;
-        /*background: transparent url(/img/roundbg_classic_normal.png) left center scroll repeat-x;*/
-        background-image: url(https://media.tut.ac.za/p/33/img/roundbg_classic_normal.png) left center scroll repeat-x;
-        padding: 0;
-        border: 1px solid transparent;
-        outline: none;
-        margin: 1px 3px 0;
-        -moz-border-radius: 100%;
-        -webkit-border-radius: 100%;
-        border-radius: 100%;
-    }
-
-    .xts-radiobutton-check-checked {
-        float: left;
-        /*background: transparent url(/img/roundbg_check_black.png) left top no-repeat;*/
-        background: transparent url(https://media.tut.ac.za/p/33/img/roundbg_check_black.png) left top no-repeat;
-        padding: 0;
-        border: 1px solid transparent;
-        outline: none;
-        margin: 0;
-        -moz-border-radius: 100%;
-        -webkit-border-radius: 100%;
-        border-radius: 100%;
-        width: 7px;
-        height: 7px;
-        margin-left: 2px;
-        margin-top: 2px;
-    }
-
-    .xts-radiobutton-check-indeterminate {
-        float: left;
-        /*background: transparent url(/img/roundbg_check_indeterminate.png) left top no-repeat;*/
-        background: transparent url(https://media.tut.ac.za/p/33/img/roundbg_check_indeterminate.png) left top no-repeat;
-        padding: 0;
-        border: none;
-        outline: none;
-        margin: 0;
-        -moz-border-radius: 100%;
-        -webkit-border-radius: 100%;
-        border-radius: 100%;
-        width: 6px;
-        height: 6px;
-        margin-left: 2px;
-        margin-top: 2px;
-    }
-
-    .xts-editor-toolbar-icon {
-        height: 21px;
-        width: 21px;
-        vertical-align: middle;
-        opacity: .667;
-        margin: 2px 0;
-        /*background: url(../../img/html_editor.png) no-repeat;*/        
-        background: url(https://media.tut.ac.za/p/33/img/html_editor.png) no-repeat;
-    }
-</style>
-        </footer>
-        <!--/ End Footer Area -->
-        
-
- 
-        
-    </body>
+</body>
 </html>
