@@ -1328,39 +1328,7 @@ var helpDataUrl = "/help-data/2/23";
         </footer>
         <!--/ End Footer Area -->
         
-                 <script defer type="text/javascript" lang="javascript" src="https://media.tut.ac.za/p/33/js/opt/grid/xtscore_min.js" ></script>
-<script defer type="text/javascript" lang="javascript" src="https://media.tut.ac.za/p/33/js/opt/grid/a_xtswindow.js" ></script>
-<script defer type="text/javascript" lang="javascript" src="https://media.tut.ac.za/p/33/js/opt/main.js" ></script>
 
-<script>
-    var mUrl_loading = 'https://media.tut.ac.za/p/33/img/loading.png';
-    jQuery(document).ready(function () {
-        jQuery('#model-window').xtsWindow({
-            showCollapseButton: true, height: 'auto', width: '60%', autoOpen: false, resizable: false, draggable: false, isModal: true, modalOpacity: 0.8,
-            initContent: function () {
-                jQuery('#model-window').xtsWindow('focus');
-            }
-        });
-    });
-
-    function showExhibitorChat() {
-        jQuery('#model-window').xtsWindow('open');
-        jQuery('#model-window').xtsWindow('setContent', '<div class="w-100 text-center"><img src="'+mUrl_loading+'" class="m-auto"></div>');
-        var url = '/view-emp-chat/1';
-        var title = 'CHAT';
-        jQuery.ajax({
-            url: url,
-            success: function (data) {
-                jQuery('#model-window').xtsWindow('setContent', data);
-            },
-            error: function () {
-                jQuery('#model-window').xtsWindow('setContent', 'Error');
-            }
-        });
-        jQuery("#window_title").html(title);
-        return false;
-    }
-</script>
  
         
     </body>
