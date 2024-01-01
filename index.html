@@ -5,12 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Web Page</title>
     <style>
-        /* Your existing styles */
+        /* General styling for better consistency and readability */
+        body {
+            margin: 0; /* Remove default margin */
+            font-family: 'Arial', sans-serif; /* Choose a common font */
+        }
 
-        /* Additional styling for better accessibility */
-        img {
+        /* Style for the header */
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            color: #000;
+            text-align: center;
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .header-div {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+
+        /* Improve styling for images */
+        .image-left,
+        .image-right {
             max-width: 100%; /* Make images responsive */
-            height: auto; /* Maintain aspect ratio */
+            height: auto;
+        }
+
+        .image-left {
+            margin-right: 10px;
+        }
+
+        .image-right {
+            margin-left: auto;
+        }
+
+        .button-container button {
+            margin-right: 10px;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .background-div {
+            background-color: #a8dadc;
+            background-image: url('background_image.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            height: 150px;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 0;
+            transition: margin-top 0.3s ease-in-out;
+        }
+
+        /* Additional content styling */
+        .additional-content {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        /* Improve styling for the card */
+        .card {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: lightpink;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-header {
+            background-color: #add8e6;
+            color: orange;
+            padding: 10px;
+            text-align: left;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .input-div {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .input-div label {
+            width: 48%; /* Adjusted width for better alignment */
+            text-align: left;
+            margin-right: 2%; /* Added small margin between label and input */
+        }
+
+        .input-div input {
+            width: 48%; /* Adjusted width for better alignment */
+            padding: 8px;
+        }
+
+        .show-password {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .login-button {
+            margin-top: 10px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px; /* Adjusted padding for better appearance */
+            width: 100%;
         }
     </style>
 </head>
@@ -81,12 +210,12 @@
             </button>
         </div>
 
-    </div>
+        <!-- Footer inside the additional content -->
+        <footer>
+            This is the black footer within the additional content. You can add your footer content here.
+        </footer>
 
-    <!-- Black Footer -->
-    <footer>
-        This is the black footer. You can add your footer content here.
-    </footer>
+    </div>
 
     <!-- Script for handling scroll behavior -->
     <script>
